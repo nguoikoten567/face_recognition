@@ -1,0 +1,21 @@
+Insightface gồm các phần:
+- phát hiện khuôn mặt: MTCNN, RetinaFace
+- nhận diện khuôn mặt: ArcFace, FaceNet, InsightFace V2, VGGFace2
+- embedding: sử dụng vector đặc trưng khuôn mặt
+- face Alignment: Căn chỉnh khuôn mặt để tăng độ chính xác
+- dataset: LFW, VGGFace2 và WIDER FACE
+
+*so sánh với YOLO v5:
+- so sánh về khía cạnh nhận diện khuôn mặt
+	+ insightface: được thiết kế đặc biệt để nhận diện khuôn mặt, xác thực danh tính và so sánh các khuôn mặt, độ khớp với cơ sở dữ liệu
+	+ yolov5: chỉ phát hiện các bounding box chứa khuôn mặt mà không thực hiện nhận diện (so sánh) khuôn mặt với cơ sở dữ liệu đã được huấn luyện.
+- so sánh thời gian thực:
+	+ insightface: có khả năng xử lý nhận diện khuôn mặt trong thời gian thực rất tốt, đặc biệt với các mô hình ArcFace. 
+	+ yolov5: chỉ phát hiện khuôn mặt thôi, cần tích hợp thêm bước nhận diện bằng 1 mô hình khác
+- độ chính xác:
+	+ insightface: cao hơn trong các điều kiện khác nhau (thay đổi góc nhìn, ánh sáng...)
+	+ yolov5: chỉ phát hiện mà không phân biệt danh tính
+- kết hợp vào ứng dụng điểm danh:
+	+ insightface: Nó được thiết kế đặc biệt cho nhận diện và xác thực khuôn mặt, giúp nhận diện chính xác và so sánh các khuôn mặt trong cơ sở dữ liệu.
+	+ yolov5: chỉ phát hiện chứ không có nhận diện, nếu làm ứng dụng sẽ phải tích hợp thêm model nhận diện, tăng độ phức tạp
+- kết luận: KHÔNG thể dùng yolov5 để thay thế insightface trong mục đích làm ứng dụng điểm danh bằng khuôn mặt
