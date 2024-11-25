@@ -1,0 +1,2 @@
+DESKTOP-6AESGKM\SQLEXPRESS
+face_recognition
